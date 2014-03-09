@@ -1,0 +1,12 @@
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if news %}
+    <p>Found {{ news|length }} news{{ news|pluralize }}.</p>
+    <ul>
+        {% for news in news %}
+        <li>{{ news.name }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No news matched your search criteria.</p>
+{% endif %}
